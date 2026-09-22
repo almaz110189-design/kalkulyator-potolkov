@@ -27,4 +27,4 @@ ${items.map(([id,name,unit,def,step])=>`<div class="row"><div><b>${name}</b><sma
 </div></section>`;
 document.getElementById("calc").addEventListener("click",calc);
 calc();
-if(window.vkBridge)vkBridge.send("VKWebAppInit").catch(()=>{});
+// VK Bridge не нужен для обычной версии сайта
