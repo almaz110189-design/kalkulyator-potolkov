@@ -7,30 +7,243 @@
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#f2f3f5;color:#171717;font-family:Arial,sans-serif}
-.page{max-width:620px;margin:0 auto;padding:20px 14px 40px}
-.card{background:#fff;border-radius:18px;padding:22px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
-h1{margin:0;font-size:28px}
-.sub{color:#777;margin-top:6px;margin-bottom:26px}
-h2{font-size:19px;margin:24px 0 12px}
-label{display:block;font-weight:600;margin-bottom:14px}
-input{width:100%;margin-top:6px;padding:13px;border:1px solid #d5d5d5;border-radius:10px;font-size:17px;background:#fff}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid #eee}
-.row div{flex:1}
-.row b{display:block;font-size:15px}
-.row small{display:block;margin-top:4px;color:#888}
-.row input{width:95px;margin:0;text-align:center}
-button{width:100%;border:0;border-radius:12px;padding:16px;margin-top:24px;background:#111;color:white;font-size:16px;font-weight:700}
-.result{margin-top:22px;padding:20px;border-radius:14px;background:#f5f5f5}
-.result>small{color:#777}
-.result strong{display:block;font-size:32px;margin:5px 0 18px}
-.r{display:flex;justify-content:space-between;gap:15px;padding:7px 0}
-.note{color:#777;font-size:13px;line-height:1.4;margin-top:18px}
+
+body{
+margin:0;
+background:#f1f3f5;
+color:#171717;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+}
+
+.page{
+max-width:640px;
+margin:auto;
+padding:16px 12px 40px;
+}
+
+.card{
+background:#fff;
+border-radius:22px;
+padding:22px;
+box-shadow:0 6px 28px rgba(0,0,0,.08);
+}
+
+.header{
+background:#111;
+color:#fff;
+margin:-22px -22px 25px;
+padding:25px 22px 23px;
+border-radius:22px 22px 0 0;
+}
+
+.header h1{
+margin:0;
+font-size:27px;
+line-height:1.15;
+}
+
+.header p{
+margin:8px 0 0;
+color:#cfcfcf;
+font-size:14px;
+}
+
+.badge{
+display:inline-block;
+margin-bottom:12px;
+padding:6px 10px;
+border-radius:20px;
+background:#2b2b2b;
+font-size:12px;
+font-weight:700;
+}
+
+h2{
+font-size:18px;
+margin:24px 0 12px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+label{
+display:block;
+font-weight:600;
+font-size:14px;
+margin-bottom:14px;
+}
+
+input{
+width:100%;
+margin-top:6px;
+padding:14px;
+border:1px solid #d8d8d8;
+border-radius:11px;
+font-size:17px;
+outline:none;
+background:#fff;
+}
+
+input:focus{
+border-color:#111;
+box-shadow:0 0 0 2px rgba(0,0,0,.06);
+}
+
+.row{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:12px;
+padding:13px 0;
+border-bottom:1px solid #ededed;
+}
+
+.row div{
+flex:1;
+}
+
+.row b{
+display:block;
+font-size:15px;
+}
+
+.row small{
+display:block;
+margin-top:4px;
+color:#888;
+font-size:12px;
+}
+
+.row input{
+width:90px;
+margin:0;
+text-align:center;
+padding:11px 8px;
+}
+
+.calc{
+width:100%;
+border:0;
+border-radius:13px;
+padding:17px;
+margin-top:25px;
+background:#111;
+color:#fff;
+font-size:16px;
+font-weight:800;
+cursor:pointer;
+}
+
+.calc:active{
+transform:scale(.99);
+}
+
+.result{
+margin-top:22px;
+padding:20px;
+border-radius:16px;
+background:#f5f5f5;
+}
+
+.result>small{
+color:#777;
+font-weight:700;
+letter-spacing:.5px;
+}
+
+.result strong{
+display:block;
+font-size:34px;
+margin:5px 0 18px;
+}
+
+.r{
+display:flex;
+justify-content:space-between;
+gap:15px;
+padding:8px 0;
+border-top:1px solid #e4e4e4;
+}
+
+.contact{
+margin-top:22px;
+padding:20px;
+border-radius:16px;
+background:#111;
+color:#fff;
+}
+
+.contact h3{
+margin:0 0 7px;
+font-size:19px;
+}
+
+.contact p{
+margin:0 0 16px;
+color:#cfcfcf;
+font-size:13px;
+line-height:1.4;
+}
+
+.contact-buttons{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.contact-buttons a{
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+padding:14px 8px;
+border-radius:11px;
+font-weight:800;
+font-size:14px;
+}
+
+.vk{
+background:#0077ff;
+color:#fff;
+}
+
+.phone{
+background:#fff;
+color:#111;
+}
+
+.note{
+color:#888;
+font-size:12px;
+line-height:1.4;
+margin-top:18px;
+}
+
 @media(max-width:450px){
-.card{padding:17px}
-h1{font-size:24px}
-.grid{grid-template-columns:1fr;gap:0}
+.card{
+padding:17px;
+}
+
+.header{
+margin:-17px -17px 22px;
+padding:22px 17px;
+}
+
+.header h1{
+font-size:24px;
+}
+
+.grid{
+grid-template-columns:1fr;
+gap:0;
+}
+
+.contact-buttons{
+grid-template-columns:1fr;
+}
 }
 </style>
 </head>
@@ -40,81 +253,118 @@ h1{font-size:24px}
 <div class="page">
 <div class="card">
 
+<div class="header">
+<div class="badge">ПРОФЕССИОНАЛЬНЫЙ РАСЧЁТ</div>
 <h1>Натяжные потолки</h1>
-<p class="sub">Предварительный расчёт стоимости</p>
+<p>Предварительный расчёт стоимости потолка</p>
+</div>
 
 <h2>Размер помещения</h2>
 
 <div class="grid">
+
 <label>
 Длина, см
-<input id="length" type="number" min="0" step="1" placeholder="Введите длину">
+<input id="length" type="number" min="0" step="1" placeholder="Например, 400">
 </label>
 
 <label>
 Ширина, см
-<input id="width" type="number" min="0" step="1" placeholder="Введите ширину">
+<input id="width" type="number" min="0" step="1" placeholder="Например, 300">
 </label>
+
 </div>
 
 <label>
 Периметр, м
-<input id="perimeter" type="number" min="0" step="0.01" placeholder="Введите периметр">
+<input id="perimeter" type="number" min="0" step="0.01" placeholder="Например, 14">
 </label>
 
 <h2>Дополнительные работы</h2>
 
 <div class="row">
-<div><b>Углы</b><small>50 ₽ / шт.</small></div>
+<div>
+<b>Углы</b>
+<small>50 ₽ / шт.</small>
+</div>
 <input id="corners" type="number" min="0" step="1" placeholder="—">
 </div>
 
 <div class="row">
-<div><b>Светильники</b><small>750 ₽ / шт.</small></div>
+<div>
+<b>Светильники</b>
+<small>750 ₽ / шт.</small>
+</div>
 <input id="spots" type="number" min="0" step="1" placeholder="—">
 </div>
 
 <div class="row">
-<div><b>Люстры</b><small>1 200 ₽ / шт.</small></div>
+<div>
+<b>Люстры</b>
+<small>1 200 ₽ / шт.</small>
+</div>
 <input id="chandeliers" type="number" min="0" step="1" placeholder="—">
 </div>
 
 <div class="row">
-<div><b>Простая ниша из алюминиевого профиля</b><small>1 300 ₽ / м</small></div>
+<div>
+<b>Простая ниша из алюминиевого профиля</b>
+<small>1 300 ₽ / м</small>
+</div>
 <input id="niche" type="number" min="0" step="0.1" placeholder="—">
 </div>
 
 <div class="row">
-<div><b>Встроенный карниз Flexy 2/05</b><small>5 000 ₽ / м</small></div>
+<div>
+<b>Встроенный карниз Flexy 2/05</b>
+<small>5 000 ₽ / м</small>
+</div>
 <input id="flexy" type="number" min="0" step="0.1" placeholder="—">
 </div>
 
 <div class="row">
-<div><b>Теневой профиль Eurokraab</b><small>1 600 ₽ / м</small></div>
+<div>
+<b>Теневой профиль Eurokraab</b>
+<small>1 600 ₽ / м</small>
+</div>
 <input id="euro" type="number" min="0" step="0.1" placeholder="—">
 </div>
 
 <div class="row">
-<div><b>Обработка углов теневого профиля</b><small>500 ₽ / шт.</small></div>
+<div>
+<b>Обработка углов теневого профиля</b>
+<small>500 ₽ / шт.</small>
+</div>
 <input id="shadow" type="number" min="0" step="1" placeholder="—">
 </div>
 
 <div class="row">
-<div><b>Световые линии</b><small>4 000 ₽ / м</small></div>
+<div>
+<b>Световые линии</b>
+<small>4 000 ₽ / м</small>
+</div>
 <input id="lines" type="number" min="0" step="0.1" placeholder="—">
 </div>
 
 <div class="row">
-<div><b>Светодиодная лента</b><small>350 ₽ / м</small></div>
+<div>
+<b>Светодиодная лента</b>
+<small>350 ₽ / м</small>
+</div>
 <input id="led" type="number" min="0" step="0.1" placeholder="—">
 </div>
 
 <div class="row">
-<div><b>Блок питания</b><small>2 000 ₽ / шт.</small></div>
+<div>
+<b>Блок питания</b>
+<small>2 000 ₽ / шт.</small>
+</div>
 <input id="power" type="number" min="0" step="1" placeholder="—">
 </div>
 
-<button onclick="calculate()">РАССЧИТАТЬ СТОИМОСТЬ</button>
+<button class="calc" onclick="calculate()">
+РАССЧИТАТЬ СТОИМОСТЬ
+</button>
 
 <div class="result">
 <small>ИТОГО</small>
@@ -141,6 +391,31 @@ h1{font-size:24px}
 </div>
 </div>
 
+<div class="contact">
+
+<h3>Нужен точный расчёт?</h3>
+
+<p>
+Свяжитесь с мастером — уточним детали, сделаем замер и рассчитаем окончательную стоимость.
+</p>
+
+<div class="contact-buttons">
+
+<a class="vk"
+href="https://vk.ru/potolokalmaz"
+target="_blank">
+ВК
+</a>
+
+<a class="phone"
+href="tel:+79818900682">
+📞 Позвонить
+</a>
+
+</div>
+
+</div>
+
 <p class="note">
 Расчёт предварительный. Окончательная стоимость уточняется после замера.
 </p>
@@ -149,14 +424,15 @@ h1{font-size:24px}
 </div>
 
 <script>
+
 function value(id){
 const element=document.getElementById(id);
 const number=parseFloat(element.value);
-return Number.isFinite(number)&&number>0?number:0;
+return Number.isFinite(number) && number > 0 ? number : 0;
 }
 
 function rubles(number){
-return Math.round(number).toLocaleString("ru-RU")+" ₽";
+return Math.round(number).toLocaleString("ru-RU") + " ₽";
 }
 
 function calculate(){
@@ -165,38 +441,53 @@ const length=value("length");
 const width=value("width");
 const perimeter=value("perimeter");
 
-if(length<=0||width<=0||perimeter<=0){
+if(length<=0 || width<=0 || perimeter<=0){
+
 document.getElementById("total").textContent="—";
 document.getElementById("area").textContent="—";
 document.getElementById("base").textContent="—";
 document.getElementById("profile").textContent="—";
 document.getElementById("extra").textContent="—";
+
 return;
 }
 
 const area=length*width/10000;
+
 const base=area*990;
+
 const profile=perimeter*200;
 
 let extra=0;
 
-extra+=value("corners")*50;
-extra+=value("spots")*750;
-extra+=value("chandeliers")*1200;
-extra+=value("niche")*1300;
-extra+=value("flexy")*5000;
-extra+=value("euro")*1600;
-extra+=value("shadow")*500;
-extra+=value("lines")*4000;
-extra+=value("led")*350;
-extra+=value("power")*2000;
+extra += value("corners")*50;
+extra += value("spots")*750;
+extra += value("chandeliers")*1200;
+extra += value("niche")*1300;
+extra += value("flexy")*5000;
+extra += value("euro")*1600;
+extra += value("shadow")*500;
+extra += value("lines")*4000;
+extra += value("led")*350;
+extra += value("power")*2000;
 
-document.getElementById("area").textContent=area.toFixed(2)+" м²";
-document.getElementById("base").textContent=rubles(base);
-document.getElementById("profile").textContent=rubles(profile);
-document.getElementById("extra").textContent=rubles(extra);
-document.getElementById("total").textContent=rubles(base+profile+extra);
+document.getElementById("area").textContent=
+area.toFixed(2)+" м²";
+
+document.getElementById("base").textContent=
+rubles(base);
+
+document.getElementById("profile").textContent=
+rubles(profile);
+
+document.getElementById("extra").textContent=
+rubles(extra);
+
+document.getElementById("total").textContent=
+rubles(base+profile+extra);
+
 }
+
 </script>
 
 </body>
