@@ -2,14 +2,367 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Калькулятор натяжных потолков</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f2f3f5;
+  color: #171717;
+  font-family: Arial, sans-serif;
+}
+
+.page {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 20px 14px 40px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.08);
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.sub {
+  color: #777;
+  margin-top: 6px;
+  margin-bottom: 26px;
+}
+
+h2 {
+  font-size: 19px;
+  margin: 24px 0 12px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+input {
+  width: 100%;
+  margin-top: 6px;
+  padding: 13px;
+  border: 1px solid #d5d5d5;
+  border-radius: 10px;
+  font-size: 17px;
+  background: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.row div {
+  flex: 1;
+}
+
+.row b {
+  display: block;
+  font-size: 15px;
+}
+
+.row small {
+  display: block;
+  margin-top: 4px;
+  color: #888;
+}
+
+.row input {
+  width: 95px;
+  margin: 0;
+  text-align: center;
+}
+
+button {
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 24px;
+  background: #111;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+button:active {
+  transform: scale(.99);
+}
+
+.result {
+  margin-top: 22px;
+  padding: 20px;
+  border-radius: 14px;
+  background: #f5f5f5;
+}
+
+.result > small {
+  color: #777;
+}
+
+.result strong {
+  display: block;
+  font-size: 32px;
+  margin: 5px 0 18px;
+}
+
+.r {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 7px 0;
+}
+
+.note {
+  color: #777;
+  font-size: 13px;
+  line-height: 1.4;
+  margin-top: 18px;
+}
+
+@media (max-width: 450px) {
+  .card {
+    padding: 17px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+</style>
 </head>
+
 <body>
-<main id="app"></main>
-<script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
-<script src="app.js"></script>
+
+<div class="page">
+<div class="card">
+
+<h1>Натяжные потолки</h1>
+<p class="sub">Предварительный расчёт стоимости</p>
+
+<h2>Размер помещения</h2>
+
+<div class="grid">
+<label>
+Длина, см
+<input id="length" type="number" min="0" value="400">
+</label>
+
+<label>
+Ширина, см
+<input id="width" type="number" min="0" value="400">
+</label>
+</div>
+
+<label>
+Периметр, м
+<input id="perimeter" type="number" min="0" step="0.01" value="16">
+</label>
+
+<h2>Дополнительные работы</h2>
+
+<div class="row">
+<div>
+<b>Углы</b>
+<small>50 ₽ / шт.</small>
+</div>
+<input id="corners" type="number" min="0" value="4">
+</div>
+
+<div class="row">
+<div>
+<b>Светильники</b>
+<small>750 ₽ / шт.</small>
+</div>
+<input id="spots" type="number" min="0" value="0">
+</div>
+
+<div class="row">
+<div>
+<b>Люстры</b>
+<small>1 200 ₽ / шт.</small>
+</div>
+<input id="chandeliers" type="number" min="0" value="0">
+</div>
+
+<div class="row">
+<div>
+<b>Простая ниша из алюминиевого профиля</b>
+<small>1 300 ₽ / м</small>
+</div>
+<input id="niche" type="number" min="0" step="0.1" value="0">
+</div>
+
+<div class="row">
+<div>
+<b>Встроенный карниз Flexy 2/05</b>
+<small>5 000 ₽ / м</small>
+</div>
+<input id="flexy" type="number" min="0" step="0.1" value="0">
+</div>
+
+<div class="row">
+<div>
+<b>Теневой профиль Eurokraab</b>
+<small>1 600 ₽ / м</small>
+</div>
+<input id="euro" type="number" min="0" step="0.1" value="0">
+</div>
+
+<div class="row">
+<div>
+<b>Обработка углов теневого профиля</b>
+<small>500 ₽ / шт.</small>
+</div>
+<input id="shadow" type="number" min="0" value="0">
+</div>
+
+<div class="row">
+<div>
+<b>Световые линии</b>
+<small>4 000 ₽ / м</small>
+</div>
+<input id="lines" type="number" min="0" step="0.1" value="0">
+</div>
+
+<div class="row">
+<div>
+<b>Светодиодная лента</b>
+<small>350 ₽ / м</small>
+</div>
+<input id="led" type="number" min="0" step="0.1" value="0">
+</div>
+
+<div class="row">
+<div>
+<b>Блок питания</b>
+<small>2 000 ₽ / шт.</small>
+</div>
+<input id="power" type="number" min="0" value="0">
+</div>
+
+<button onclick="calculate()">
+РАССЧИТАТЬ СТОИМОСТЬ
+</button>
+
+<div class="result">
+
+<small>ИТОГО</small>
+
+<strong id="total">0 ₽</strong>
+
+<div class="r">
+<span>Площадь</span>
+<b id="area">0 м²</b>
+</div>
+
+<div class="r">
+<span>Полотно + монтаж</span>
+<b id="base">0 ₽</b>
+</div>
+
+<div class="r">
+<span>Профиль + вставка</span>
+<b id="profile">0 ₽</b>
+</div>
+
+<div class="r">
+<span>Дополнительно</span>
+<b id="extra">0 ₽</b>
+</div>
+
+</div>
+
+<p class="note">
+Расчёт предварительный. Окончательная стоимость уточняется после замера.
+</p>
+
+</div>
+</div>
+
+<script>
+function value(id) {
+  const element = document.getElementById(id);
+  const number = parseFloat(element.value);
+  return Number.isFinite(number) && number > 0 ? number : 0;
+}
+
+function rubles(number) {
+  return Math.round(number).toLocaleString("ru-RU") + " ₽";
+}
+
+function calculate() {
+
+  const length = value("length");
+  const width = value("width");
+  const perimeter = value("perimeter");
+
+  const area = length * width / 10000;
+
+  const base = area * 990;
+  const profile = perimeter * 200;
+
+  let extra = 0;
+
+  extra += value("corners") * 50;
+  extra += value("spots") * 750;
+  extra += value("chandeliers") * 1200;
+  extra += value("niche") * 1300;
+  extra += value("flexy") * 5000;
+  extra += value("euro") * 1600;
+  extra += value("shadow") * 500;
+  extra += value("lines") * 4000;
+  extra += value("led") * 350;
+  extra += value("power") * 2000;
+
+  document.getElementById("area").textContent =
+    area.toFixed(2) + " м²";
+
+  document.getElementById("base").textContent =
+    rubles(base);
+
+  document.getElementById("profile").textContent =
+    rubles(profile);
+
+  document.getElementById("extra").textContent =
+    rubles(extra);
+
+  document.getElementById("total").textContent =
+    rubles(base + profile + extra);
+}
+
+calculate();
+</script>
+
 </body>
 </html>
