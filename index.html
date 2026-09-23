@@ -5,103 +5,272 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Алмаз Потолок — натяжные потолки</title>
+  <meta
+    name="description"
+    content="Натяжные потолки. Изготовление и монтаж. Предварительный расчёт стоимости онлайн."
+  >
 
   <style>
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      color: #fff;
-      background: #111;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f6f8;
+      color: #171717;
     }
 
-    .hero {
-      min-height: 100vh;
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e8e8e8;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-inner {
+      min-height: 88px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 30px 20px;
-
-      background:
-        linear-gradient(
-          rgba(0,0,0,0.65),
-          rgba(0,0,0,0.78)
-        ),
-        url("site/almaz-logo-original-clean.png") center / cover no-repeat;
-
-      background-color: #171717;
-    }
-
-    .content {
-      width: 100%;
-      max-width: 850px;
-      padding: 45px 30px;
-      border-radius: 25px;
-      background: rgba(20,20,20,0.82);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      justify-content: space-between;
+      gap: 20px;
     }
 
     .logo {
-      width: 280px;
-      max-width: 80%;
+      width: 235px;
+      max-width: 52%;
       height: auto;
-      margin-bottom: 25px;
+      display: block;
     }
 
-    h1 {
-      margin: 0;
-      font-size: 42px;
+    .header-phone {
+      color: #171717;
       font-weight: 700;
-    }
-
-    .subtitle {
-      margin-top: 15px;
-      font-size: 20px;
-      color: #ddd;
-    }
-
-    .line {
-      width: 70px;
-      height: 3px;
-      background: #fff;
-      margin: 28px auto;
-    }
-
-    h2 {
-      margin: 0 0 15px;
-      font-size: 30px;
-    }
-
-    .description {
-      max-width: 650px;
-      margin: 0 auto 32px;
-      font-size: 17px;
-      line-height: 1.6;
-      color: #d5d5d5;
-    }
-
-    .main-button {
-      display: inline-block;
-      padding: 18px 38px;
-      border-radius: 12px;
-      background: #fff;
-      color: #111;
-      text-decoration: none;
       font-size: 18px;
+      white-space: nowrap;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: #ffffff;
+      padding: 75px 0 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 span {
+      display: block;
+      margin-top: 8px;
+      color: #8f1218;
+    }
+
+    .hero-text {
+      margin: 24px 0 30px;
+      max-width: 650px;
+      color: #555;
+      font-size: 19px;
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button-main,
+    .button-secondary {
+      display: inline-block;
+      padding: 17px 27px;
+      border-radius: 10px;
       font-weight: 700;
+      font-size: 16px;
       transition: 0.2s;
     }
 
-    .main-button:hover {
-      transform: translateY(-2px);
+    .button-main {
+      background: #8f1218;
+      color: #ffffff;
+    }
+
+    .button-main:hover {
+      background: #751016;
+      transform: translateY(-1px);
+    }
+
+    .button-secondary {
+      background: #f1f1f1;
+      color: #171717;
+    }
+
+    .button-secondary:hover {
+      background: #e7e7e7;
+    }
+
+    .hero-card {
+      background: #f7f7f7;
+      border: 1px solid #e5e5e5;
+      border-radius: 22px;
+      padding: 30px;
+    }
+
+    .hero-card h3 {
+      margin: 0 0 20px;
+      font-size: 25px;
+    }
+
+    .hero-card-item {
+      padding: 14px 0;
+      border-bottom: 1px solid #dedede;
+      font-size: 16px;
+      color: #444;
+    }
+
+    .hero-card-item:last-child {
+      border-bottom: 0;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-title {
+      margin: 0 0 14px;
+      text-align: center;
+      font-size: 36px;
+    }
+
+    .section-subtitle {
+      max-width: 700px;
+      margin: 0 auto 42px;
+      text-align: center;
+      color: #666;
+      line-height: 1.6;
+      font-size: 17px;
+    }
+
+    /* ADVANTAGES */
+
+    .advantages {
+      background: #f5f6f8;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e7e7e7;
+      border-radius: 18px;
+      padding: 28px;
+    }
+
+    .card-icon {
+      font-size: 34px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 21px;
+    }
+
+    .card p {
+      margin: 0;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: #ffffff;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .service {
+      padding: 22px;
+      border-radius: 14px;
+      background: #f7f7f7;
+      border: 1px solid #e5e5e5;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    /* CTA */
+
+    .cta {
+      background: #171717;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .cta h2 {
+      margin: 0 0 16px;
+      font-size: 38px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: #cfcfcf;
+      line-height: 1.6;
+      font-size: 17px;
+    }
+
+    .cta .button-main {
+      background: #ffffff;
+      color: #171717;
+    }
+
+    .cta .button-main:hover {
+      background: #eeeeee;
     }
 
     .contacts {
-      margin-top: 28px;
+      margin-top: 24px;
       display: flex;
       justify-content: center;
       gap: 12px;
@@ -110,45 +279,101 @@
 
     .contact {
       display: inline-block;
-      padding: 12px 22px;
-      border: 1px solid rgba(255,255,255,0.3);
+      padding: 13px 22px;
+      border: 1px solid #555;
       border-radius: 10px;
-      color: #fff;
-      text-decoration: none;
-      background: rgba(255,255,255,0.08);
+      color: #ffffff;
     }
 
-    .note {
-      margin-top: 28px;
-      color: #999;
+    .contact:hover {
+      background: #262626;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #101010;
+      color: #888;
+      padding: 25px 0;
+      text-align: center;
       font-size: 14px;
     }
 
-    @media (max-width: 600px) {
+    /* MOBILE */
 
-      .content {
-        padding: 35px 20px;
+    @media (max-width: 800px) {
+
+      .header-inner {
+        min-height: 75px;
       }
 
-      h1 {
-        font-size: 31px;
+      .header-phone {
+        font-size: 15px;
       }
 
-      h2 {
-        font-size: 25px;
+      .hero {
+        padding: 50px 0 55px;
       }
 
-      .subtitle {
-        font-size: 17px;
+      .hero-grid {
+        grid-template-columns: 1fr;
       }
 
-      .main-button {
-        width: 100%;
-        padding: 17px 15px;
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .service-list {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .container {
+        width: min(100% - 22px, 1100px);
+      }
+
+      .header-inner {
+        flex-direction: column;
+        justify-content: center;
+        padding: 14px 0;
+        gap: 8px;
       }
 
       .logo {
-        width: 230px;
+        width: 210px;
+        max-width: 80%;
+      }
+
+      .header-phone {
+        font-size: 14px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero-text {
+        font-size: 17px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .button-main,
+      .button-secondary {
+        width: 100%;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: 30px;
       }
     }
   </style>
@@ -156,9 +381,8 @@
 
 <body>
 
-  <section class="hero">
-
-    <div class="content">
+  <header>
+    <div class="container header-inner">
 
       <img
         class="logo"
@@ -166,54 +390,245 @@
         alt="Алмаз Потолок"
       >
 
-      <h1>Натяжные потолки</h1>
-
-      <div class="subtitle">
-        Изготовление и монтаж натяжных потолков
-      </div>
-
-      <div class="line"></div>
-
-      <h2>Рассчитайте стоимость</h2>
-
-      <p class="description">
-        Сделайте предварительный расчёт стоимости натяжного потолка
-        с учётом площади, профиля, светильников и дополнительных работ.
-      </p>
-
       <a
-        class="main-button"
-        href="calculator.html"
+        class="header-phone"
+        href="tel:+79818900682"
       >
-        РАССЧИТАТЬ СТОИМОСТЬ
+        +7 981 890-06-82
       </a>
 
-      <div class="contacts">
-
-        <a
-          class="contact"
-          href="tel:+79818900682"
-        >
-          📞 Позвонить
-        </a>
-
-        <a
-          class="contact"
-          href="https://vk.ru/potolokalmaz"
-          target="_blank"
-        >
-          VK
-        </a>
-
-      </div>
-
-      <div class="note">
-        Окончательная стоимость уточняется после замера.
-      </div>
-
     </div>
+  </header>
 
-  </section>
+
+  <main>
+
+    <!-- ПЕРВЫЙ ЭКРАН -->
+
+    <section class="hero">
+
+      <div class="container hero-grid">
+
+        <div>
+
+          <h1>
+            Натяжные
+            <span>потолки</span>
+          </h1>
+
+          <p class="hero-text">
+            Изготовление и профессиональный монтаж натяжных потолков.
+            Рассчитайте предварительную стоимость прямо на сайте.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a
+              class="button-main"
+              href="calculator.html"
+            >
+              РАССЧИТАТЬ СТОИМОСТЬ
+            </a>
+
+            <a
+              class="button-secondary"
+              href="tel:+79818900682"
+            >
+              ПОЗВОНИТЬ
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+          <h3>Что вы получите</h3>
+
+          <div class="hero-card-item">
+            ✓ Точный предварительный расчёт
+          </div>
+
+          <div class="hero-card-item">
+            ✓ Подбор профиля и комплектующих
+          </div>
+
+          <div class="hero-card-item">
+            ✓ Профессиональный монтаж
+          </div>
+
+          <div class="hero-card-item">
+            ✓ Консультация перед заказом
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ПРЕИМУЩЕСТВА -->
+
+    <section class="advantages">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          Почему выбирают «Алмаз Потолок»
+        </h2>
+
+        <p class="section-subtitle">
+          Работаем с учётом особенностей помещения и пожеланий заказчика.
+        </p>
+
+
+        <div class="cards">
+
+          <div class="card">
+            <div class="card-icon">📐</div>
+
+            <h3>Точный расчёт</h3>
+
+            <p>
+              Можно заранее рассчитать ориентировочную стоимость потолка
+              с необходимыми дополнительными работами.
+            </p>
+          </div>
+
+
+          <div class="card">
+            <div class="card-icon">🔧</div>
+
+            <h3>Профессиональный монтаж</h3>
+
+            <p>
+              Аккуратная установка конструкции с учётом особенностей
+              помещения.
+            </p>
+          </div>
+
+
+          <div class="card">
+            <div class="card-icon">💡</div>
+
+            <h3>Освещение</h3>
+
+            <p>
+              Светильники, люстры, световые линии и другие варианты
+              освещения потолка.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- УСЛУГИ -->
+
+    <section class="services">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          Наши работы
+        </h2>
+
+        <p class="section-subtitle">
+          Выполняем различные варианты натяжных потолков и дополнительные
+          работы по оформлению и освещению.
+        </p>
+
+
+        <div class="service-list">
+
+          <div class="service">
+            Натяжные потолки
+          </div>
+
+          <div class="service">
+            Монтаж светильников
+          </div>
+
+          <div class="service">
+            Установка люстр
+          </div>
+
+          <div class="service">
+            Теневые профили
+          </div>
+
+          <div class="service">
+            Световые линии
+          </div>
+
+          <div class="service">
+            LED-подсветка
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- КАЛЬКУЛЯТОР -->
+
+    <section class="cta">
+
+      <div class="container">
+
+        <h2>
+          Узнайте предварительную стоимость
+        </h2>
+
+        <p>
+          Укажите размеры помещения и дополнительные работы —
+          калькулятор автоматически рассчитает ориентировочную стоимость.
+        </p>
+
+        <a
+          class="button-main"
+          href="calculator.html"
+        >
+          ОТКРЫТЬ КАЛЬКУЛЯТОР
+        </a>
+
+
+        <div class="contacts">
+
+          <a
+            class="contact"
+            href="tel:+79818900682"
+          >
+            📞 +7 981 890-06-82
+          </a>
+
+          <a
+            class="contact"
+            href="https://vk.ru/potolokalmaz"
+            target="_blank"
+          >
+            VK
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    © Алмаз Потолок
+  </footer>
 
 </body>
 </html>
