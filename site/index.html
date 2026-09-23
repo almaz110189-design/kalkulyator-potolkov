@@ -1,189 +1,572 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Алмаз Потолок — натяжные потолки</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<title>Алмаз Потолок — натяжные потолки</title>
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #222;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    header {
-      background: #fff;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    .logo {
-      width: 260px;
-      max-width: 90%;
-      height: auto;
-    }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #101318;
+  color: #fff;
+}
 
-    .hero {
-      background: #fff;
-      text-align: center;
-      padding: 45px 20px;
-    }
+a {
+  text-decoration: none;
+}
 
-    .hero h1 {
-      margin: 0 0 15px;
-      font-size: 42px;
-    }
+.container {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
 
-    .hero p {
-      margin: 0 auto 25px;
-      max-width: 700px;
-      color: #666;
-      font-size: 18px;
-      line-height: 1.5;
-    }
+/* ШАПКА */
 
-    .button {
-      display: inline-block;
-      padding: 16px 30px;
-      background: #111;
-      color: #fff;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
+.header {
+  background: #0d1015;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
 
-    .button:hover {
-      opacity: .85;
-    }
+.header-inner {
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
 
-    .calculator-section {
-      display: none;
-      padding: 30px 15px 60px;
-      background: #f5f5f5;
-    }
+.logo {
+  width: 230px;
+  height: auto;
+  display: block;
+}
 
-    .calculator-section h2 {
-      text-align: center;
-      margin: 0 0 25px;
-      font-size: 30px;
-    }
+.phone {
+  color: #fff;
+  font-size: 19px;
+  font-weight: bold;
+}
 
-    .calculator-frame {
-      width: 100%;
-      max-width: 1000px;
-      height: 1200px;
-      margin: 0 auto;
-      display: block;
-      border: 0;
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 5px 25px rgba(0,0,0,.12);
-    }
+/* ГЛАВНЫЙ ЭКРАН */
 
-    .contacts {
-      text-align: center;
-      padding: 40px 20px;
-      background: #111;
-    }
+.hero {
+  min-height: 620px;
+  display: flex;
+  align-items: center;
 
-    .contacts a {
-      color: #fff;
-      margin: 5px 10px;
-      text-decoration: none;
-    }
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8,10,14,0.96),
+      rgba(8,10,14,0.72),
+      rgba(8,10,14,0.88)
+    );
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 32px;
-      }
+  padding: 70px 0;
+}
 
-      .calculator-frame {
-        height: 1400px;
-      }
-    }
-  </style>
+.hero-content {
+  max-width: 760px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -2px;
+}
+
+.hero h1 span {
+  display: block;
+  color: #d6a74b;
+  margin-top: 8px;
+}
+
+.hero-text {
+  margin: 25px 0 32px;
+  max-width: 650px;
+  color: #d2d4d8;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-block;
+  padding: 17px 28px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.button-main {
+  background: #d6a74b;
+  color: #111;
+}
+
+.button-main:hover {
+  background: #e4ba65;
+}
+
+.button-dark {
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  background: rgba(255,255,255,0.05);
+}
+
+/* ПРЕИМУЩЕСТВА */
+
+.section {
+  padding: 80px 0;
+}
+
+.section-dark {
+  background: #101318;
+}
+
+.section-light {
+  background: #f4f5f7;
+  color: #17191d;
+}
+
+.title {
+  text-align: center;
+  margin: 0 0 15px;
+  font-size: 38px;
+}
+
+.subtitle {
+  max-width: 700px;
+  margin: 0 auto 45px;
+  text-align: center;
+  color: #888;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  padding: 30px;
+  border-radius: 18px;
+  background: #181c23;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.section-light .card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+}
+
+.icon {
+  font-size: 35px;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  margin: 0 0 12px;
+  font-size: 21px;
+}
+
+.card p {
+  margin: 0;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+.section-light .card p {
+  color: #666;
+}
+
+/* УСЛУГИ */
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.service {
+  padding: 22px;
+  background: #181c23;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  font-size: 17px;
+}
+
+/* КАЛЬКУЛЯТОР */
+
+.calculator-section {
+  padding: 85px 0;
+  background: #080a0e;
+  text-align: center;
+}
+
+.calculator-section h2 {
+  margin: 0 0 15px;
+  font-size: 40px;
+}
+
+.calculator-section p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+/* КОНТАКТЫ */
+
+.contacts {
+  text-align: center;
+  padding: 70px 0;
+  background: #171b22;
+}
+
+.contacts h2 {
+  margin: 0 0 25px;
+  font-size: 36px;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.contact {
+  padding: 14px 25px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 10px;
+  color: #fff;
+}
+
+/* FOOTER */
+
+.footer {
+  background: #080a0e;
+  color: #777;
+  text-align: center;
+  padding: 25px;
+  font-size: 14px;
+}
+
+/* МОБИЛЬНАЯ ВЕРСИЯ */
+
+@media (max-width: 800px) {
+
+  .header-inner {
+    min-height: 80px;
+  }
+
+  .phone {
+    font-size: 15px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 70px 0;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 550px) {
+
+  .header-inner {
+    flex-direction: column;
+    padding: 15px 0;
+  }
+
+  .logo {
+    width: 210px;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .hero-text {
+    font-size: 17px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <img
-    class="logo"
-    src="almaz-logo-original-clean.png"
-    alt="Алмаз Потолок"
-  >
+<!-- ШАПКА -->
+
+<header class="header">
+  <div class="container header-inner">
+
+    <img
+      class="logo"
+      src="almaz-logo-original-clean.png"
+      alt="Алмаз Потолок"
+    >
+
+    <a
+      class="phone"
+      href="tel:+79818900682"
+    >
+      +7 981 890-06-82
+    </a>
+
+  </div>
 </header>
+
+
+<!-- ГЛАВНЫЙ ЭКРАН -->
 
 <section class="hero">
 
-  <h1>Натяжные потолки</h1>
+  <div class="container">
 
-  <p>
-    Изготовление и монтаж натяжных потолков.
-    Рассчитайте предварительную стоимость прямо на сайте.
-  </p>
+    <div class="hero-content">
 
-  <button
-    class="button"
-    onclick="openCalculator()"
-  >
-    РАССЧИТАТЬ СТОИМОСТЬ
-  </button>
+      <h1>
+        Натяжные
+        <span>потолки</span>
+      </h1>
+
+      <p class="hero-text">
+        Изготовление и профессиональный монтаж натяжных потолков.
+        Рассчитайте предварительную стоимость прямо на сайте.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          class="button button-main"
+          href="../calculator.html"
+        >
+          РАССЧИТАТЬ СТОИМОСТЬ
+        </a>
+
+        <a
+          class="button button-dark"
+          href="tel:+79818900682"
+        >
+          ПОЗВОНИТЬ
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<section
-  id="calculator"
-  class="calculator-section"
->
+<!-- ПРЕИМУЩЕСТВА -->
 
-  <h2>Калькулятор натяжных потолков</h2>
+<section class="section section-light">
 
-  <iframe
-    class="calculator-frame"
-    src="../calculator.html"
-    title="Калькулятор натяжных потолков"
-  ></iframe>
+  <div class="container">
+
+    <h2 class="title">
+      Почему выбирают «Алмаз Потолок»
+    </h2>
+
+    <p class="subtitle">
+      Профессиональный монтаж натяжных потолков и индивидуальный подход
+      к каждому помещению.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">📐</div>
+        <h3>Точный расчёт</h3>
+        <p>
+          Предварительно рассчитываем стоимость потолка
+          с учётом размеров и дополнительных работ.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔧</div>
+        <h3>Профессиональный монтаж</h3>
+        <p>
+          Аккуратная установка конструкции с учётом
+          особенностей помещения.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💡</div>
+        <h3>Освещение</h3>
+        <p>
+          Светильники, люстры, световые линии и LED-подсветка.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<div class="contacts">
+<!-- УСЛУГИ -->
 
-  <a href="tel:+79818900682">
-    📞 +7 981 890-06-82
-  </a>
+<section class="section section-dark">
 
-  <a
-    href="https://vk.ru/potolokalmaz"
-    target="_blank"
-  >
-    VK
-  </a>
+  <div class="container">
 
-</div>
+    <h2 class="title">
+      Что мы делаем
+    </h2>
+
+    <p class="subtitle">
+      Выполняем монтаж потолков и дополнительные работы
+      по освещению и оформлению.
+    </p>
+
+    <div class="services">
+
+      <div class="service">
+        Натяжные потолки
+      </div>
+
+      <div class="service">
+        Монтаж светильников
+      </div>
+
+      <div class="service">
+        Установка люстр
+      </div>
+
+      <div class="service">
+        Теневые профили
+      </div>
+
+      <div class="service">
+        Световые линии
+      </div>
+
+      <div class="service">
+        LED-подсветка
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 
-<script>
-  function openCalculator() {
-    const calculator = document.getElementById("calculator");
+<!-- КАЛЬКУЛЯТОР -->
 
-    calculator.style.display = "block";
+<section class="calculator-section">
 
-    calculator.scrollIntoView({
-      behavior: "smooth"
-    });
-  }
-</script>
+  <div class="container">
+
+    <h2>
+      Рассчитайте стоимость потолка
+    </h2>
+
+    <p>
+      Укажите размеры помещения и необходимые дополнительные работы.
+      Калькулятор автоматически выполнит предварительный расчёт.
+    </p>
+
+    <a
+      class="button button-main"
+      href="../calculator.html"
+    >
+      ОТКРЫТЬ КАЛЬКУЛЯТОР
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- КОНТАКТЫ -->
+
+<section class="contacts">
+
+  <div class="container">
+
+    <h2>
+      Остались вопросы?
+    </h2>
+
+    <div class="contact-buttons">
+
+      <a
+        class="contact"
+        href="tel:+79818900682"
+      >
+        📞 +7 981 890-06-82
+      </a>
+
+      <a
+        class="contact"
+        href="https://vk.ru/potolokalmaz"
+        target="_blank"
+      >
+        VK
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer class="footer">
+  © Алмаз Потолок
+</footer>
 
 </body>
 </html>
