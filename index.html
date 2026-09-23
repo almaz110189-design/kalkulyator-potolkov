@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Алмаз Потолок — натяжные потолки</title>
-  <meta name="description" content="Натяжные потолки. Изготовление и монтаж. Предварительный расчёт стоимости онлайн.">
 
   <style>
     * {
@@ -15,96 +14,90 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background:
-        linear-gradient(rgba(10, 14, 22, 0.72), rgba(10, 14, 22, 0.82)),
-        url("site/almaz-logo-original-clean.png") center top / 420px auto no-repeat;
-      background-color: #11151c;
-      color: white;
-      min-height: 100vh;
+      color: #fff;
+      background: #111;
     }
 
-    .page {
+    .hero {
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px 20px;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.65),
+          rgba(0,0,0,0.78)
+        ),
+        url("site/almaz-logo-original-clean.png") center / cover no-repeat;
+
+      background-color: #171717;
     }
 
-    header {
-      padding: 25px 20px 10px;
-      text-align: center;
+    .content {
+      width: 100%;
+      max-width: 850px;
+      padding: 45px 30px;
+      border-radius: 25px;
+      background: rgba(20,20,20,0.82);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
     }
 
     .logo {
-      width: 230px;
+      width: 280px;
       max-width: 80%;
       height: auto;
-      display: block;
-      margin: 0 auto 20px;
+      margin-bottom: 25px;
     }
 
     h1 {
       margin: 0;
-      font-size: 34px;
+      font-size: 42px;
       font-weight: 700;
     }
 
     .subtitle {
-      margin-top: 12px;
-      font-size: 18px;
-      color: #d7d7d7;
+      margin-top: 15px;
+      font-size: 20px;
+      color: #ddd;
     }
 
-    main {
-      width: 100%;
-      max-width: 850px;
-      margin: auto;
-      padding: 35px 20px 45px;
-      text-align: center;
+    .line {
+      width: 70px;
+      height: 3px;
+      background: #fff;
+      margin: 28px auto;
     }
 
-    .hero {
-      background: rgba(20, 25, 34, 0.88);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 24px;
-      padding: 45px 25px;
-      box-shadow: 0 15px 50px rgba(0,0,0,0.35);
-    }
-
-    .hero h2 {
+    h2 {
       margin: 0 0 15px;
-      font-size: 28px;
+      font-size: 30px;
     }
 
-    .hero p {
-      margin: 0 auto 30px;
-      max-width: 620px;
-      color: #d0d0d0;
+    .description {
+      max-width: 650px;
+      margin: 0 auto 32px;
       font-size: 17px;
-      line-height: 1.5;
+      line-height: 1.6;
+      color: #d5d5d5;
     }
 
-    .button {
+    .main-button {
       display: inline-block;
-      padding: 18px 32px;
+      padding: 18px 38px;
       border-radius: 12px;
-      background: #ffffff;
-      color: #11151c;
+      background: #fff;
+      color: #111;
       text-decoration: none;
+      font-size: 18px;
       font-weight: 700;
-      font-size: 17px;
       transition: 0.2s;
-      margin: 6px;
     }
 
-    .button:hover {
+    .main-button:hover {
       transform: translateY(-2px);
-      opacity: 0.9;
-    }
-
-    .button.secondary {
-      background: transparent;
-      color: white;
-      border: 1px solid rgba(255,255,255,0.35);
     }
 
     .contacts {
@@ -117,44 +110,45 @@
 
     .contact {
       display: inline-block;
-      padding: 13px 22px;
+      padding: 12px 22px;
+      border: 1px solid rgba(255,255,255,0.3);
       border-radius: 10px;
-      color: white;
+      color: #fff;
       text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.08);
     }
 
     .note {
       margin-top: 28px;
-      color: #aaa;
+      color: #999;
       font-size: 14px;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #888;
-      font-size: 13px;
-    }
-
     @media (max-width: 600px) {
+
+      .content {
+        padding: 35px 20px;
+      }
+
       h1 {
-        font-size: 28px;
+        font-size: 31px;
       }
 
-      .hero {
-        padding: 32px 18px;
+      h2 {
+        font-size: 25px;
       }
 
-      .hero h2 {
-        font-size: 24px;
+      .subtitle {
+        font-size: 17px;
       }
 
-      .button {
-        display: block;
+      .main-button {
         width: 100%;
-        margin: 8px 0;
+        padding: 17px 15px;
+      }
+
+      .logo {
+        width: 230px;
       }
     }
   </style>
@@ -162,9 +156,10 @@
 
 <body>
 
-  <div class="page">
+  <section class="hero">
 
-    <header>
+    <div class="content">
+
       <img
         class="logo"
         src="site/almaz-logo-original-clean.png"
@@ -176,48 +171,49 @@
       <div class="subtitle">
         Изготовление и монтаж натяжных потолков
       </div>
-    </header>
 
-    <main>
-      <section class="hero">
+      <div class="line"></div>
 
-        <h2>Рассчитайте стоимость потолка</h2>
+      <h2>Рассчитайте стоимость</h2>
 
-        <p>
-          Предварительно рассчитайте стоимость натяжного потолка
-          с учётом площади, профиля, светильников и дополнительных работ.
-        </p>
+      <p class="description">
+        Сделайте предварительный расчёт стоимости натяжного потолка
+        с учётом площади, профиля, светильников и дополнительных работ.
+      </p>
 
-        <a class="button" href="calculator.html">
-          РАССЧИТАТЬ СТОИМОСТЬ
+      <a
+        class="main-button"
+        href="calculator.html"
+      >
+        РАССЧИТАТЬ СТОИМОСТЬ
+      </a>
+
+      <div class="contacts">
+
+        <a
+          class="contact"
+          href="tel:+79818900682"
+        >
+          📞 Позвонить
         </a>
 
-        <div class="contacts">
-          <a class="contact" href="tel:+79818900682">
-            📞 Позвонить
-          </a>
+        <a
+          class="contact"
+          href="https://vk.ru/potolokalmaz"
+          target="_blank"
+        >
+          VK
+        </a>
 
-          <a
-            class="contact"
-            href="https://vk.ru/potolokalmaz"
-            target="_blank"
-          >
-            VK
-          </a>
-        </div>
+      </div>
 
-        <div class="note">
-          Окончательная стоимость уточняется после замера.
-        </div>
+      <div class="note">
+        Окончательная стоимость уточняется после замера.
+      </div>
 
-      </section>
-    </main>
+    </div>
 
-    <footer>
-      © Алмаз Потолок
-    </footer>
-
-  </div>
+  </section>
 
 </body>
 </html>
